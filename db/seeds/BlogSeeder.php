@@ -6,8 +6,6 @@ use Phinx\Seed\AbstractSeed;
 
 class BlogSeeder extends AbstractSeed
 {
-    private string $suffix;
-
     public function run(): void
     {
         $categoryIds = $this->seedCategories();
@@ -70,9 +68,7 @@ class BlogSeeder extends AbstractSeed
         $rows = $this->fetchAll('SELECT id, slug FROM categories ORDER BY id');
         $ids  = [];
         foreach ($rows as $row) {
-            // strip suffix to keep map keys consistent with post mapping
-            $baseSlug        = substr($row['slug'], 0, -7); // '-' + 6 chars
-            $ids[$baseSlug]  = (int) $row['id'];
+            $ids[$row['slug']] = (int) $row['id'];
         }
 
         return $ids;
@@ -246,18 +242,12 @@ WIMP (Weakly Interacting Massive Particles) — самая популярная 
             ],
         ];
 
-        foreach ($posts as &$post) {
-            $post['slug'] .= "-{$this->suffix}";
-        }
-        unset($post);
-
         $this->table('posts')->insert($posts)->saveData();
 
         $rows = $this->fetchAll('SELECT id, slug FROM posts ORDER BY id');
         $ids  = [];
         foreach ($rows as $row) {
-            $baseSlug       = substr($row['slug'], 0, -7); // '-' + 6 chars
-            $ids[$baseSlug] = (int) $row['id'];
+            $ids[$row['slug']] = (int) $row['id'];
         }
 
         return $ids;

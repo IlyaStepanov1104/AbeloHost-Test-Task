@@ -211,9 +211,9 @@ MD,
         $created = [];
 
         for ($i = 0; $i < $count; $i++) {
-            $slug = array_rand(self::TITLES);
-            $slug = $this->makeUniqueSlug($slug);
-            $title = self::TITLES[$slug];
+            $baseSlug = array_rand(self::TITLES);
+            $slug = $this->makeUniqueSlug($baseSlug);
+            $title = self::TITLES[$baseSlug];
 
             $postId = $postModel->create([
                 'title' => $title,

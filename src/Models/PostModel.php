@@ -6,7 +6,7 @@ use App\Core\Model;
 
 class PostModel extends Model
 {
-    private int $perPage = 10;
+    private int $perPage = 12;
 
     public function getLatest(int $limit = 3): array
     {

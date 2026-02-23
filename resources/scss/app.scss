@@ -400,6 +400,73 @@ a {
     }
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-xs;
+    margin-top: $space-l;
+
+    &__btn,
+    &__page {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        padding: 0 $space-xs;
+        border-radius: 6px;
+        font-size: $font-size-s;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color $transition-default, color $transition-default;
+    }
+
+    &__btn {
+        background: $tag-bg;
+        color: $color-text-tag;
+
+        &:hover {
+            background: $tag-bg-hover;
+            color: $color-text-tag-hover;
+            opacity: 1;
+        }
+
+        &--disabled {
+            background: $tag-bg;
+            color: lighten($color-text-secondary, 20%);
+            pointer-events: none;
+        }
+    }
+
+    &__page {
+        background: $tag-bg;
+        color: $color-text-tag;
+
+        &:hover {
+            background: $tag-bg-hover;
+            color: $color-text-tag-hover;
+            opacity: 1;
+        }
+
+        &--active {
+            background: $color-bg-reverse;
+            color: $color-text-reverse;
+            pointer-events: none;
+        }
+    }
+
+    &__dots {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        font-size: $font-size-s;
+        color: $color-text-secondary;
+    }
+}
+
 .generate-result {
     display: flex;
     justify-content: center;

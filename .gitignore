@@ -11,3 +11,4 @@ storage/cache/smarty/compiled/*
 storage/cache/smarty/cache/*
 !storage/cache/smarty/compiled/.gitkeep
 !storage/cache/smarty/cache/.gitkeep
+composer.lock

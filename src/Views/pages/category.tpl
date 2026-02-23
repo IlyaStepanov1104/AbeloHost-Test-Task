@@ -8,6 +8,8 @@
                     {include file="components/post-card.tpl" post=$post}
                 {/foreach}
             </div>
+            
+            {include file="components/pagination.tpl" baseUrl="/category/{$category.slug}"}
         </div>
     </section>
 {/block}

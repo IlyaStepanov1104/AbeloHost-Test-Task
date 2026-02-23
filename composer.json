@@ -1,0 +1,29 @@
+{
+    "type": "project",
+    "require": {
+        "smarty/smarty": "^5.8",
+        "vlucas/phpdotenv": "^5.6",
+        "fastvolt/markdown": "^0.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "StepanovIlya1104",
+            "email": "ilyahtml@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "robmorgan/phinx": "^0.16.10",
+        "scssphp/scssphp": "^1.13"
+    },
+    "scripts": {
+        "migrate": "vendor/bin/phinx migrate",
+        "rollback": "vendor/bin/phinx rollback -t 0",
+        "seed": "vendor/bin/phinx seed:run",
+        "scss": "php bin/scss.php"
+    }
+}

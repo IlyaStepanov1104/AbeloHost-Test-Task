@@ -1,0 +1,13 @@
+.claude/
+.code/
+vendor/
+.env
+
+# Compiled assets
+public/css/app.css
+
+# Smarty cache
+storage/cache/smarty/compiled/*
+storage/cache/smarty/cache/*
+!storage/cache/smarty/compiled/.gitkeep
+!storage/cache/smarty/cache/.gitkeep
